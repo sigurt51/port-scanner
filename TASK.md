@@ -104,6 +104,7 @@ Port 80: ÖPPEN
 - Ansluter till en öppen port
 - Försöker ta emot bannern/hälsningen
 - Identifierar vanliga tjänster (HTTP, SSH, FTP, etc.)
+- OBS: Räcker att identifiera en tjänst
 
 **Tips:** Vissa tjänster behöver att du skickar data först innan de svarar!
 
