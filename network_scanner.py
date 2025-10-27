@@ -12,7 +12,7 @@ import sys
 target = "scanme.nmap.org" # webbplatsen vi vill skanna.
 
 try:
-    for port in range(1,10):
+    for port in range(80,90):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Skapar en ny socket, AF_INET och SOCK_STREAM är default
         socket.setdefaulttimeout(1) # Gör att default timeout sätts till 1 sekund.
 
@@ -30,36 +30,10 @@ except socket.error: # Om det skulle det ske en socket.error
     print("error")
     sys.exit()
 
+
+# Om man bara exikverar sitt program så kommer "__name__" vara = "__main__"
+# Bestämmer om en fil ska köras direkt, om den är importerad eller ej.
+
 if __name__ == "__main__":
     pass
-
-
-
-"""
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-target = input("what website to scan?: ")
-
-def pscan(port):
-    try:
-        s.connect((target,port))
-        s.close()
-        return True
-    except:
-        return False
-
-
-if pscan(80):
-    print('port 80 is open')
-else:
-    print('port 80 is closed')
-
-
-for x in range(20,100):
-    if pscan(x):
-        print(f"Port {x} is open")
-    else:
-        print(f"{x} is closed")
-
-s.close()
-"""
 
